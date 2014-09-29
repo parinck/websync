@@ -1,14 +1,43 @@
+<div class="panel-heading ">
+    <!-- <div class="panel-heading clearfix" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{task.id}}">
 
-
-<div class="panel-heading clearfix" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{task.id}}">
-
-    <!--TASK HEADER TITLE-->
     <h4 class="panel-title">{{task.name}}</h4>
 
-    <!--TASK DELETE BUTTON-->
     <button class="btn btn-danger pull-right" title="Remove task" ng-click="task.delete()">
         <span class="glyphicon glyphicon-trash"></span>
     </button>
 
 </div>
+ -->
 
+    <!--TASK HEADER TITLE-->
+    <h4 style="cursor:pointer;" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{task.id}}" class="pull-left glyphicon glyphicon-hdd">
+        <span></span>{{task.name}}
+    </h4>
+
+    <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- TASK ON/OFF SCHEDULE BUTTON SHORTCUT -->
+        <a ng-show="task.schedule.enabled" title="Turn scheduling on" ng-click="task.toggleScheduleEnabled()">
+            <h4 style="cursor:pointer;display:inline-block">
+                <span class="glyphicon glyphicon-eye-open"></span>
+            </h4>
+        </a>
+
+        <a ng-show="!task.schedule.enabled" title="Turn scheduling off" ng-click="task.toggleScheduleEnabled()">
+            <h4 style="cursor:pointer;display:inline-block">
+                <span class="glyphicon glyphicon-eye-close"></span>
+            </h4>
+        </a>
+
+        <span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+        <!--TASK RUN-->
+        <a class=" " ng-click="task.run()" title="Run">
+            <h4 style="cursor:pointer;display:inline-block">
+                <span class="glyphicon glyphicon-refresh"></span>
+            </h4>
+        </a>
+        <span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+</div>
