@@ -1,0 +1,39 @@
+@import url('margins.css');
+@import url('paddings.css');
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.data {
+    white-space: pre;
+}
+
+.cursor-hover-hand:hover {
+    cursor: hand;
+    cursor: pointer;
+}
+
+/*noinspection CssInvalidPseudoSelector*/
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/*noinspection CssInvalidElement*/
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+.scroll-horizontal {
+    overflow-x: scroll;
+}
+
+.scroll-both {
+    overflow: scroll;
+}
